@@ -1,2 +1,2 @@
 # K-NN
-使用MATLAB撰寫簡易K-NN分類器
+利用Iris dataset測試K-NN分類器，並求出其分類率。
