@@ -1,52 +1,49 @@
-%% Artificial Intelligence Homework#1 Demo - 2020/03/17
+clc;       % æ¸…é™¤command window
+clear      % æ¸…é™¤workspace
+close all  % é—œé–‰æ‰€æœ‰figure
 
-%%
-clc;       % ²M°£command window
-clear      % ²M°£workspace
-close all  % Ãö³¬©Ò¦³figure
-
-%% Åª¨ú.txt¸ê®Æ
+%% è®€å–.txtè³‡æ–™
 dataSet = load('iris.txt');
-rawData = dataSet(:,1:4);    % ­ì©l¸ê®Æ¡A75µ§¸ê®Æ x 4­Ó¯S¼x
-label   = dataSet(:,5);      % 75µ§¸ê®Æ©Ò¹ïÀ³ªº¼ĞÅÒ
+rawData = dataSet(:,1:4);    % åŸå§‹è³‡æ–™ï¼Œ75ç­†è³‡æ–™ x 4å€‹ç‰¹å¾µ
+label   = dataSet(:,5);      % 75ç­†è³‡æ–™æ‰€å°æ‡‰çš„æ¨™ç±¤
 kk = 3;
 error = 0;
 acc=0;
 
-%% ½d¨Ò¤@¡BScatter Plot
-figure; % ¶}±Ò·sªºÃ¸¹ÏªÅ¶¡
+%% ç¯„ä¾‹ä¸€ã€Scatter Plot
+figure; % é–‹å•Ÿæ–°çš„ç¹ªåœ–ç©ºé–“
 
 plot(rawData(  1: 50,1),rawData(  1: 50,2),'ro',...
      rawData( 51:100,1),rawData( 51:100,2),'go',...
      rawData(101:150,1),rawData(101:150,2),'bo');   
-     % ¥HplotÃ¸¹Ï«ü¥O¤À§Oµe¥Xclass1~3¤§²Ä¤@»P²Ä¤G¯S¼x¡C
+     % ä»¥plotç¹ªåœ–æŒ‡ä»¤åˆ†åˆ¥ç•«å‡ºclass1~3ä¹‹ç¬¬ä¸€èˆ‡ç¬¬äºŒç‰¹å¾µã€‚
 
-title('Scatter Plot');                              % ¹Ï¦WºÙ
-legend('class1', 'class2', 'class3');               % Ãş§O¼Ğ¸¹»¡©ú
-xlabel('Feature1');                                 % ¯S¼x¼Ğ¸¹µù¸Ñ
-ylabel('Feature2');                                 % ¯S¼x¼Ğ¸¹µù¸Ñ
+title('Scatter Plot');                              % åœ–åç¨±
+legend('class1', 'class2', 'class3');               % é¡åˆ¥æ¨™è™Ÿèªªæ˜
+xlabel('Feature1');                                 % ç‰¹å¾µæ¨™è™Ÿè¨»è§£
+ylabel('Feature2');                                 % ç‰¹å¾µæ¨™è™Ÿè¨»è§£
 
-%% ½d¨Ò¤G¡B­pºâ¶ZÂ÷
+%% ç¯„ä¾‹äºŒã€è¨ˆç®—è·é›¢
 trainset = [rawData(  1: 25,1:4);...
           rawData( 51: 75,1:4);...
           rawData(101:125,1:4);]; 
-          % ¿ï¨ú¨CÃş§O«e¥b¡A¦X¨Ö¬°training set
+          % é¸å–æ¯é¡åˆ¥å‰åŠï¼Œåˆä½µç‚ºtraining set
 
 testset = [rawData( 26: 50,1:4);...
           rawData( 76:100,1:4);...
           rawData(126:150,1:4)]; 
-          % ¿ï¨ú¨CÃş§O«á¥b¡A¦X¨Ö¬°test set
+          % é¸å–æ¯é¡åˆ¥å¾ŒåŠï¼Œåˆä½µç‚ºtest set
 [testm,~]=size(testset);
 [trainm,trainn]=size(trainset);
 
-distancev=zeros(trainm,1);%¨C­Ó´ú¸ÕÂI»P°V½m¤Îªº¼Ú¦¡¶ZÂ÷¶q
+distancev=zeros(trainm,1);%æ¯å€‹æ¸¬è©¦é»èˆ‡è¨“ç·´åŠçš„æ­å¼è·é›¢é‡
 for i=1:testm   
     for j=1:trainm
         distancev(j)=0;
         for k=1:trainn
             distancev(j)=distancev(j)+(testset(i,k)-trainset(j,k))^2; 
         end
-        distancev(j)=sqrt(distancev(j));%.¼Ú¦¡¶ZÂ÷
+        distancev(j)=sqrt(distancev(j));%.æ­å¼è·é›¢
     end
     [val,index] = sort(distancev,'ascend');
     
@@ -66,22 +63,6 @@ CR=1-error/testm;
 disp('CR:');
 disp(CR);
 
-
-
-% %% ½d¨Ò¤T¡Bk-NN¿ï¥Î«ü¥O°Ñ¦Ò
-% %%% === sort: ±Æ§Ç =====================================================%%%
-% A = [9 0 -7 5 3 8 -10 4 2];
-% [value,index] = sort(A,'ascend'); 
-% % ±N°}¦CA¡A¥Ñ¤p¨ì¤j­«·s±Æ§Ç
-% % value: ¥Ñ¤p¨ì¤j­«·s±Æ§Çªº­È
-% % index: value¤¤¨C­Ó­È¦bAªº­ì©l¦ì¸m
-% %%% ====================================================================%%%
-% 
-% %%% === mode: ²³¼Æ =====================================================%%%
-% B = [3 1 3 3 2];
-% M = mode(B); 
-% % §ä¥X°}¦CB¤¤³ÌÀWÁc¥X²{ªº¼Æ­È
-% %%% ====================================================================%%%
 
 
 
