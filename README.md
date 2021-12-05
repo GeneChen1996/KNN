@@ -16,6 +16,13 @@
 data和Testing data互換，求得第二個分類率，再將兩分類率平均。
 2. K-NN中之K值取1和3。
 3. 利用兩兩特徵畫出散佈圖(Scatter plot)，共6張圖。
+![image](https://github.com/Geneon/KNN/blob/main/%E7%89%B9%E5%BE%B51%E8%88%87%E7%89%B9%E5%BE%B52%E4%B9%8B%E7%89%B9%E6%95%A3%E4%BD%88%E5%9C%96.png)
+![image](https://github.com/Geneon/KNN/blob/main/%E7%89%B9%E5%BE%B51%E8%88%87%E7%89%B9%E5%BE%B53%E4%B9%8B%E7%89%B9%E6%95%A3%E4%BD%88%E5%9C%96.png)
+![image](https://github.com/Geneon/KNN/blob/main/%E7%89%B9%E5%BE%B51%E8%88%87%E7%89%B9%E5%BE%B54%E4%B9%8B%E7%89%B9%E6%95%A3%E4%BD%88%E5%9C%96.png)
+![image](https://github.com/Geneon/KNN/blob/main/%E7%89%B9%E5%BE%B52%E8%88%87%E7%89%B9%E5%BE%B53%E4%B9%8B%E7%89%B9%E6%95%A3%E4%BD%88%E5%9C%96.png)
+![image](https://github.com/Geneon/KNN/blob/main/%E7%89%B9%E5%BE%B52%E8%88%87%E7%89%B9%E5%BE%B54%E4%B9%8B%E7%89%B9%E6%95%A3%E4%BD%88%E5%9C%96.png)
+![image](https://github.com/Geneon/KNN/blob/main/%E7%89%B9%E5%BE%B53%E8%88%87%E7%89%B9%E5%BE%B54%E4%B9%8B%E7%89%B9%E6%95%A3%E4%BD%88%E5%9C%96.png)
+
 4. 利用Iris dataset測試K-NN分類器，並列出所有可能之特徵組合(共15種組合)
 的分類率。
 特徵組合總共15種，1為花萼長度、2為花萼寬度、3為花瓣長度、4為花瓣寬度。
