@@ -16,6 +16,7 @@
 data和Testing data互換，求得第二個分類率，再將兩分類率平均。
 2. K-NN中之K值取1和3。
 3. 利用兩兩特徵畫出散佈圖(Scatter plot)，共6張圖。
+
 ![image](https://github.com/Geneon/KNN/blob/main/%E7%89%B9%E5%BE%B51%E8%88%87%E7%89%B9%E5%BE%B52%E4%B9%8B%E7%89%B9%E6%95%A3%E4%BD%88%E5%9C%96.png)
 ![image](https://github.com/Geneon/KNN/blob/main/%E7%89%B9%E5%BE%B51%E8%88%87%E7%89%B9%E5%BE%B53%E4%B9%8B%E7%89%B9%E6%95%A3%E4%BD%88%E5%9C%96.png)
 ![image](https://github.com/Geneon/KNN/blob/main/%E7%89%B9%E5%BE%B51%E8%88%87%E7%89%B9%E5%BE%B54%E4%B9%8B%E7%89%B9%E6%95%A3%E4%BD%88%E5%9C%96.png)
